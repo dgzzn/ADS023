@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Nota } from './nota.model';
+import { NotasService } from './notas.service';
 
 @Component({
   selector: 'app-notas',
@@ -8,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class NotasPage implements OnInit {
 
   titulo: string = 'Suas notas'
+  notas: Nota[]
   
-  constructor(private notasService: NotasService, notas: Nota[]) { }
+  constructor(private notasService: NotasService) { }
 
   ngOnInit() {
-    this.notas = notasService.getNotas();
+    this.notas = this.notasService.getNotas();
   }
 
 }

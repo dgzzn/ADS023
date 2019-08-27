@@ -1,0 +1,7 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "Atividade03",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

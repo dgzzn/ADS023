@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Nota } from './nota.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,11 @@ export class NotasService {
     },
   ];
   constructor() { }
+
+  getNotas() {
+    return [...this.notas];
+  }
 }
 
-getNotas() {
-  return [...this.notas];
-}
+  
+
