@@ -1,0 +1,30 @@
+<ion-split-pane>
+  <ion-menu menuId="avocadoMenu" color="danger" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Painel lateral</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-item>
+        <ion-label>Awesome Label</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>Awesome Label</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>Awesome Label</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+
+  <ion-content main>
+    <ion-header>
+      <ion-toolbar color="light">
+        <ion-title>Painel principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <p>Página criada com Split Pane Layout.</p>
+  </ion-content>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-split-pane>

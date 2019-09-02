@@ -24,8 +24,10 @@ export class NotasService {
     },
   ];
   constructor() { }
+  
+  getNotas() {
+    return [...this.notas];
+  }
+  
 }
 
-getNotas() {
-  return [...this.notas];
-}
