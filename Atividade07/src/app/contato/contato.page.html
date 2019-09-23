@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo contato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+      <ion-note padding color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>{{ mensagens_validacao.nome_required }}
+       </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-Mail</ion-label>
+      <ion-input formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group name="auto">
+        <ion-list-header>Sexo</ion-list-header>
+        <ion-item>
+          <ion-label>Masculino</ion-label>
+          <ion-radio value="masculino"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Feminino</ion-label>
+          <ion-radio value="feminino"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-label>Data de aniversário</ion-label>
+    <ion-item>
+      <ion-label>Dia</ion-label>
+      <ion-select multiple="false" placeholder="Dia">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mês</ion-label>
+      <ion-select multiple="false" placeholder="Mês">
+        <ion-select-option value="janeiro">Janeiro</ion-select-option>
+        <ion-select-option value="fevereiro">Fevereiro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input formControlName="telefone" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Favorito</ion-label>
+      <ion-checkbox slot="start" checked="true"  formControlName="favorito"></ion-checkbox>
+    </ion-item>
+    <ion-button (click)="salvar()" [disable]="!formulario.valid()">
+      Salvar
+    </ion-button>
+  </form>
+</ion-content>
