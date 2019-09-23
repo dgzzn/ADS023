@@ -22,6 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [DetalhesPage],
-  id: null
+  
 })
-export class DetalhesPageModule {private activatedRoute: ActivatedRoute}
+export class DetalhesPageModule {}
